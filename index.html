@@ -170,21 +170,48 @@
             color: white;
             font-weight: 600;
             transition: transform 0.2s;
+            text-align: center;
         }
 
-        .btn-demo {
+        .big-btn span { font-size: 0.85rem; opacity: 0.9; font-weight: 400; margin-top: 5px;}
+        .big-btn i { font-size: 1.8rem; margin-bottom: 10px; }
+        .big-btn:hover { transform: translateY(-3px); }
+
+        /* --- NEW BUTTON STYLES --- */
+        .btn-inventory {
+            /* Green/Teal Gradient for Render */
             background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
             box-shadow: 0 4px 15px rgba(56, 239, 125, 0.3);
         }
 
-        .btn-cv {
-            background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
-            box-shadow: 0 4px 15px rgba(78, 67, 118, 0.3);
+        .btn-mountain {
+            /* Red/Orange Gradient for Streamlit */
+            background: linear-gradient(135deg, #FF416C 0%, #FF4B2B 100%);
+            box-shadow: 0 4px 15px rgba(255, 75, 43, 0.3);
+        }
+        
+        /* CV Button (Capsule Style) */
+        .cv-download-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #2b5876; /* Professional Dark Blue */
+            color: white;
+            padding: 12px 35px;
+            border-radius: 50px; /* Pill shape */
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 25px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        .big-btn:hover { transform: translateY(-3px); }
-        .big-btn span { font-size: 0.9rem; opacity: 0.9; font-weight: 400; margin-top: 5px;}
-        .big-btn i { font-size: 1.5rem; margin-bottom: 5px; }
+        .cv-download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(43, 88, 118, 0.3);
+            background: #1f4056;
+        }
 
         /* --- RESPONSIVE MOBILE --- */
         @media (max-width: 600px) {
@@ -205,12 +232,14 @@
             <img src="https://github.com/spouladchang.png" alt="Saeid Pouladchang" class="profile-img">
 
             <h1>Saeid Pouladchang</h1>
-            <p class="subtitle">
-                Data Scientist | Master's Student in Engineering Technology (Strategos)
-                <br>
+            <p class="subtitle" style="margin-bottom: 10px; color: #1f2937; font-weight: 600;">
+                Data Scientist | Industrial AI Engineer
+            </p>
+            <p class="subtitle" style="font-size: 0.95rem; margin-top: 0;">
+                Master's Student in Engineering Technology (Strategos) <br>
                 University of Genoa
             </p>
-            
+
             <div class="social-links">
                 <a href="mailto:saeedpooladchang78@gmail.com" class="social-btn">
                     <i class="fa-solid fa-envelope"></i> Email
@@ -223,22 +252,20 @@
                 <a href="https://github.com/spouladchang" target="_blank" class="social-btn">
                     <i class="fa-brands fa-github"></i> GitHub
                 </a>
-                <a href="https://orcid.org/YOUR_ORCID_ID" class="social-btn">
-                    <i class="fa-brands fa-orcid"></i> ORCID
-                </a>
-            </div>
+                
+                </div>
 
             <div class="action-container">
-                <a href="YOUR_STREAMLIT_APP_LINK" class="big-btn btn-demo">
-                    <i class="fa-solid fa-rocket"></i>
+                <a href="https://inventory-optimization-deep-rl.onrender.com/" target="_blank" class="big-btn btn-inventory">
+                    <i class="fa-solid fa-boxes-stacked"></i>
                     Inventory Optimization AI
-                    <span>Live Interactive Demo</span>
+                    <span>Live Demo on Render</span>
                 </a>
                 
-                <a href="YOUR_CV_PDF_LINK" class="big-btn btn-cv">
-                    <i class="fa-solid fa-file-pdf"></i>
-                    Download Full CV
-                    <span>PDF Format</span>
+                <a href="https://mountain-car-rl-optimization.streamlit.app/" target="_blank" class="big-btn btn-mountain">
+                    <i class="fa-solid fa-car-side"></i>
+                    MountainCar RL Agent
+                    <span>Live Demo on Streamlit</span>
                 </a>
             </div>
 
@@ -249,6 +276,13 @@
                     <br><br>
                     My focus is bridging the gap between theoretical AI models and real-world industrial logistics. I build agents that optimize costs, manage inventory, and solve dynamic pricing problems.
                 </p>
+                
+                <div style="text-align: center;">
+                    <a href="YOUR_CV_LINK_HERE" target="_blank" class="cv-download-btn">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        Download Full Curriculum Vitae
+                    </a>
+                </div>
             </div>
 
             <div class="section">
@@ -256,7 +290,7 @@
                 <ul style="list-style-position: inside; color: #4b5563;">
                     <li style="margin-bottom: 10px;">
                         <strong>Inventory Optimization Engine (DDQN):</strong> 
-                        Outperformed heuristic baselines by 3.6% in profit generation.
+                        Outperformed heuristic baselines by 3.6% in profit generation using Deep Reinforcement Learning.
                     </li>
                     <li style="margin-bottom: 10px;">
                         <strong>Autonomous Control (MountainCar):</strong> 
